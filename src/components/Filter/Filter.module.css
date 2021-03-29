@@ -1,0 +1,22 @@
+.search_label {
+    display: block;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.search_text {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.search_input {
+    display: inline-block;
+    height: 35px;
+    padding: 2px;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+.search_input:focus {
+    outline: 4px solid #c7e4f0;
+}

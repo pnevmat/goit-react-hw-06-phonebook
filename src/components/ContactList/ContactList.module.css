@@ -1,0 +1,44 @@
+.contactList {
+    padding-right: 250px;
+}
+
+.contactList :last-child {
+    margin-bottom: 0;
+}
+
+.contact_item {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.contact_item_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact_name {
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.contact_button {
+    display: inline-block;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(134, 166, 255);
+    background-color: rgb(87, 132, 255);
+    font-family:sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    cursor: pointer;
+}
