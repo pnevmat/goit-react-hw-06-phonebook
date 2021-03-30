@@ -1,12 +1,13 @@
+import actionTypes from './actionTypes';
 import shortid from 'shortid';
 
 const onStoreUpdate = contacts => ({
-    type: 'update/store',
+    type: actionTypes.UPDATE_STORE,
     payload: contacts
 });
 
 const onAddContact = contact => ({
-    type: 'add/contact',
+    type: actionTypes.ADD_CONTACT,
     payload: {
         id: shortid.generate(),
         name: contact.name,
@@ -15,12 +16,12 @@ const onAddContact = contact => ({
 });
 
 const onDeleteContact = contactId => ({
-    type: 'delete/contact',
+    type: actionTypes.DELETE_CONTACT,
     payload: contactId
 });
 
 const onSearchContacts = event => ({
-    type: 'search/contacts',
+    type: actionTypes.SEARCH_CONTACTS,
     payload: event.target.value.toLowerCase()
 });
 

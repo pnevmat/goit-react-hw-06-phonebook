@@ -1,5 +1,6 @@
 import {createStore} from 'redux';
 import {devToolsEnhancer} from 'redux-devtools-extension';
+import actionTypes from './actionTypes';
 
 const initialState = {
     contacts: [],
@@ -9,25 +10,25 @@ const initialState = {
 const reducer = (state = initialState, {type, payload}) => {
     console.log("Store Log", state);
     switch (type) {
-        case 'update/store' :
+        case actionTypes.UPDATE_STORE :
             return {
                 ...state,
                 contacts: [...payload]
             }
 
-        case 'add/contact' :
+        case actionTypes.ADD_CONTACT :
             return {
                 ...state,
                 contacts: [...state.contacts, payload]
             }
         
-        case 'delete/contact' :
+        case actionTypes.DELETE_CONTACT :
             return {
                 ...state,
                 contacts: state.contacts.filter(contact => contact.id !== payload)
             }
 
-        case 'search/contacts' :
+        case actionTypes.SEARCH_CONTACTS :
             return {
                 ...state,
                 filter: payload,
