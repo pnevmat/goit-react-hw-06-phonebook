@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 
 import styles from './ContactList.module.css';
 
-const ContactList = (props) => (
+const ContactList = ({filter, state, foundContacts, onDeleteContact}) => (
   <ul className={styles.contactList}>
-    {props.filter === '' ?
-      props.state.map(contact => (
+    {filter === '' ?
+      state.map(contact => (
         <li className={styles.contact_item} key={contact.id}>
           <div className={styles.contact_item_container}>
             <p className={styles.contact_name}>{contact.name}: {contact.number}</p>
-            <button className={styles.contact_button} type="button" onClick={() => props.onDeleteContact(contact.id)}>Delete</button>
+            <button className={styles.contact_button} type="button" onClick={() => onDeleteContact(contact.id)}>Delete</button>
           </div>
         </li>
       )) :
-      props.foundContacts.map(contact => (
+      foundContacts.map(contact => (
         <li className={styles.contact_item} key={contact.id}>
           <div className={styles.contact_item_container}>
             <p className={styles.contact_name}>{contact.name}: {contact.number}</p>

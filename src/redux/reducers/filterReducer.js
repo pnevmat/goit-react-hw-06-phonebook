@@ -1,13 +1,20 @@
-import actionTypes from '../actionTypes';
+import {createReducer} from '@reduxjs/toolkit';
 
-const filterReducer = (state = '', {type, payload}) => {
-    switch (type) {
-        case actionTypes.SEARCH_CONTACTS :
-            return payload
+// import actionTypes from '../actionTypes';
+import onSearchContacts from '../actions/searchContacts';
 
-        default :
-            return state;
-    }
-}
+// const filterReducer = (state = '', {type, payload}) => {
+//     switch (type) {
+//         case actionTypes.SEARCH_CONTACTS :
+//             return payload
+
+//         default :
+//             return state;
+//     }
+// }
+
+const filterReducer = createReducer('', {
+    [onSearchContacts]: (_, {payload}) => payload
+});
 
 export default filterReducer;
